@@ -1,6 +1,6 @@
 # league-of-legends-winner-predector
 
- A ML Model That Predict The Percentage of Winning for Each Blue And Red Team In League Of Legends , Currently The Accuracy is quite low  for The Lake of data , but It Still in Maintainance
+ A ML Model That Predict The Percentage of Winning for Each Blue And Red Team In League Of Legends , Currently The Accuracy is quite low  for The Lack of data , but It Still in Maintainance
 
 ## What is League Of Legends
 
