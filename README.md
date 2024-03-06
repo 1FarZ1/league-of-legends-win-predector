@@ -1,6 +1,11 @@
 # league-of-legends-winner-predector
 
- A ML Model That Predict The Percentage of Winning for Each Blue And Red , Currently The Accuracy is quite low  for The Lake of data , but It Still in Maintainance
+ A ML Model That Predict The Percentage of Winning for Each Blue And Red Team In League Of Legends , Currently The Accuracy is quite low  for The Lake of data , but It Still in Maintainance
+
+## What is League Of Legends
+
+- League of Legends is a team-based game with over 140 champions to make epic plays with.
+- Moba Style Game
 
 ## Contains
 
