@@ -14,7 +14,6 @@ champs = load_json('c:/Users/fares/Desktop/Ai_Goru/trainIt/league-of-legends-pre
 
 
 df  = data[[
-    'gameId',
     't1_champ1id', 
     't1_champ2id',
     't1_champ3id',
@@ -79,7 +78,9 @@ for i in range(1,6):
         )
     )
 if st.button('Predict'):
-    X = []
+    X = [
+
+    ]
     for i in range(5):
         X.append(int(list(champs['data'].keys())[list(champs['data'].values()).index(team1[i])]))
     for i in range(5):

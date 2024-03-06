@@ -2,6 +2,11 @@
 
  A ML Model That Predict The Percentage of Winning for Each Blue And Red , Currently The Accuracy is quite low  for The Lake of data , but It Still in Maintainance
 
+## Contains
+
+- Notebook For Detailled Explanation
+- Prod File which contain A code for a local server to test the model using the streamlit library and user friendly interface
+
 ## Status
 
 ### The Model is Still in Maintainance , The Accuracy is Quite Low , But It's Still in Development , Currently Looking for More Data to Train The Model , And Trying to Find The Best Model to Use
