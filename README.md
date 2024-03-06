@@ -12,6 +12,10 @@
 - Notebook For Detailled Explanation
 - Prod File which contain A code for a local server to test the model using the streamlit library and user friendly interface
 
+## User Interface
+![image](https://github.com/1FarZ1/league-of-legends-win-predector/assets/91225280/95a64b14-d3dd-46d8-8fc0-ccde9d61406f)
+
+
 ## Status
 
 ### The Model is Still in Maintainance , The Accuracy is Quite Low , But It's Still in Development , Currently Looking for More Data to Train The Model , And Trying to Find The Best Model to Use
