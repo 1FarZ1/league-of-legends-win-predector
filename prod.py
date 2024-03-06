@@ -10,7 +10,7 @@ def load_json(path):
 data = pd.read_csv(
     'c:/Users/fares/Desktop/Ai_Goru/trainIt/league-of-legends-predector/data/games.csv'
 )
-champs = load_json('c:/Users/fares/Desktop/Ai_Goru/trainIt/league-of-legends-predector/data/champion_info.json')
+champion_data:list = load_json('c:/Users/fares/Desktop/Ai_Goru/trainIt/league-of-legends-predector/data/champion_info.json')['data']
 
 
 df  = data[[
@@ -33,8 +33,8 @@ df  = data[[
 #     for i in range(1,6):
 #         access1 = f't1_champ{i}id'
 #         access2 = f't2_champ{i}id'
-#         team1.append(champs['data'][str(data.iloc[k][access1])]['name'])
-#         team2.append(champs['data'][str(data.iloc[k][access2])]['name'])
+#         team1.append(champion_data[str(data.iloc[k][access1])]['name'])
+#         team2.append(champion_data[str(data.iloc[k][access2])]['name'])
 #     print(f'Game[{k}]: {data.iloc[k]["gameId"]}')
 #     print(f'Team1: {team1}')
 #     print(f'Team2: {team2}')
@@ -61,30 +61,41 @@ st.write('This is a simple web app to predict the winner of a game of League of 
 
 team1 = []
 team2 = []
+champion_names = [champion_data[str(champion_id)]['name'] for champion_id in champion_data]
 
-for i in range(1,6):
-    team1.append(
-        st.selectbox(
-            f'Champion {i} for Team 1',
-            options=list(champs['data'].values())
-        )
-    )
 
-for i in range(1,6):
-    team2.append(
-        st.selectbox(
-            f'Champion {i} for Team 2',
-            options=list(champs['data'].values())
+col1,col2 = st.columns(2,
+                       gap='large')
+
+
+with col1:
+    st.header('Team 1')
+    for i in range(1,6):
+        team1.append(
+            st.selectbox(
+                f'Champion {i}',
+                options=champion_names,
+                key=f'team1_champion_{i}'
+                )
         )
-    )
+
+with col2:
+    st.header('Team 2')
+    for i in range(1,6):
+        team2.append(
+            st.selectbox(
+                f'Champion {i}',
+                options=champion_names,
+                key=f'team2_champion_{i}'
+                )   
+            )
+        
 if st.button('Predict'):
-    X = [
-
-    ]
+    X = [ ]
     for i in range(5):
-        X.append(int(list(champs['data'].keys())[list(champs['data'].values()).index(team1[i])]))
+        X.append(int(list(champion_data.keys())[list(champion_data.values()).index(team1[i])]))
     for i in range(5):
-        X.append(int(list(champs['data'].keys())[list(champs['data'].values()).index(team2[i])]))
+        X.append(int(list(champion_data.keys())[list(champion_data.values()).index(team2[i])]))
     prob = model.predict_proba([X])
     st.write(f'Team1: {prob[0][0]*100:.2f}% | Team2: {prob[0][1]*100:.2f}%')
 
